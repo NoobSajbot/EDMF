@@ -6,7 +6,7 @@ An implementation of the main functions of EDMF
 Author: Alberto Costa
 Institution: Future Cities Laboratory, Singapore
 Version: 0.1
-Last modify: 22/02/18
+Last modify: 06/03/18
 """
 
 import numpy as np
@@ -249,8 +249,9 @@ class EDMF:
 
     def falsification(self):
         """
+        Perform the falsification
 
-        :return:
+        :return: NULL
         """
 
         pm = self.predictions - self.measurements.T
@@ -265,7 +266,7 @@ class EDMF:
 
         Save the IDs, parameters, and predictions of the candidate models in the xlsx_output file
         :param xlsx_output: xlsx output file where the CMS will be saved. NB index ID is 0 to end-1
-        :return:
+        :return: NULL
         """
 
         col = ["ID"]

@@ -1,5 +1,5 @@
 --- 
-date: 06 March 2018
+date: 12 April 2018
 author: Alberto Costa
 affiliation: Future Cities Laboratory, Singapore
 version: 0.1
@@ -8,7 +8,7 @@ version: 0.1
 # EDMF
 This package contains 3 files:
 * edmf.py: main source file including the functions to perform error-domain model falsification
-* Template_Input.xlsx: input file with data. 
+* Input.xlsx: input file with data. 
 * test.py: a file to show how to use the code
 
 ## Input file details
@@ -17,6 +17,7 @@ The file must contain the following sheets:
 * Pred_Err: the first row contains labels. From the second row there are data. In the first two columns (c1 and c2) there are two numerical values. In the third column the allowed values are "r", "a", "g". "r" means that the uncertainty is relative, so c1 and c2 are the relative lower and upper bound of the uniform distribution (it means that their values will be multiplied by the corresponding mean computed from data). If "a", the uncertainty is absolute, so the values c1 and c2 are already the lower and upper bounds of the uniform distribution. If "g", the uncertainty is gaussian. c1 is the mean and c2 is the standard deviation. After that, there is a value of 0/1 for each subsequent cell (c4, c5...), one for each sensor, to indicate if the corresponding uncertainty is affecting (1) or not (0) the sensor (e.g., if c4=1 it means that sensor 1 is affected by the uncertainty defined by c1,c2,c3 of that row). 
 * Meas: one column. The first row is the label (e.g., Measurements), then there are the measurement values.
 * Meas_Err: same as for Pred_Err, but related to the uncertainties affecting the measurements.
+* Active_Sensors: one column. One row for each sensor. A value of 1 means that the sensor is used in the falsification and for the Sidak correction. A value of 0 means that the sensor is not used.
 
 
 
